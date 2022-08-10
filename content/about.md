@@ -3,10 +3,11 @@ title: "Who am I"
 date: 2022-08-10T04:35:18-04:00
 description: "I fancy the cyber world, eager for challenge, refuse boredom"
 tags: []
-featured_image: "/images/Cyberpunk_Lover.jpg"
+featured_image: "images/Cyberpunk Lover.jpg"
+images: [images/Cyberpunk Lover.jpg]
 categories:
 comment: true
-draft: true
+draft: false
 ---
 # Long Story Short
 In modern world, all technology around us seems black box to us. It could be a gift, also could be a weapon. It's a waste for me to use computer to only watch youtube, because it's a sword that nobody sees, an assassin hiding in the crowd. 
