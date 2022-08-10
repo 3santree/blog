@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://3santree.netlify.app/'
 languageCode = 'en-us'
 title = 'Manchester'
 description = 'Another corner in internet'
