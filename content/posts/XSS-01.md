@@ -14,27 +14,39 @@ tags: [XSS]
 
 ## Types
 
-- Reflected XSS
+### Reflected XSS
 
-  Typically, to exploit a reflected xss, you need to send the vulnerable link to victim that contains xss payload, which could send you information of the victim such as cookies. In addition, it's better to know to obfuscate the URL
+Typically, to exploit a reflected xss, you need to send the vulnerable link to victim that contains xss payload, which could send you information of the victim such as cookies. In addition, it's better to know to obfuscate the URL
 
-- Persistent/Stored XSS
+### Persistent/Stored XSS
 
-  In contrast to Reflected XSS, the payload is stored in server side which mean the victim will be affected by XSS everytime he entered the vulnerable web application
+In contrast to Reflected XSS, the payload is stored in server side which mean the victim will be affected by XSS everytime he entered the vulnerable web application
 
-- DOM XSS
+### DOM XSS
 
-  To simplify, it exists **only within client-side code** (javascript). It's similar to Reflected XSS but without interacting with server-side. 
+To simplify, it exists **only within client-side code** (javascript). It's similar to Reflected XSS but without interacting with server-side. 
 
-  In Reflected XSS, the payload are already in the response from the web server, then it's showed or exploited on the client side. 
+In Reflected XSS, the payload are already in the response from the web server, then it's showed or exploited on the client side. 
 
-  In DOM XSS, the response from the web server have no malicious payload, to the server's perspective, everything looks the same, except on client side, **the browser** take the parameter from the url, then execute the payload.
+In DOM XSS, the response from the web server have no malicious payload, to the server's perspective, everything looks the same, except on client side, **the browser** take the parameter from the url, then execute the payload.
 
-  ```javascript
-  # source: where the untrusted input is handled
-  var search = document.getElementById('search').value;
-  var results = document.getElementById('results');
-  # sink: where the untrusted input is used
-  results.innerHTML = 'You searched for: ' + search;
-  ```
+```javascript
+# source: where the untrusted input is handled
+var search = document.getElementById('search').value;
+var results = document.getElementById('results');
+# sink: where the untrusted input is used
+results.innerHTML = 'You searched for: ' + search;
+```
+
+### Blind XSS
+
+> Assume a "contact us" page that send email to the back-end employee, the result is only viewable by administrator manually. Attack could not immediately see their attack.
+
+payload's execution not visible to attack/user, but visible to back-end employee or administrator.
+
+In this case, we can use *XSSHunter* to help us validate, using the XSShunter's payload, it the payload is executed, a screenshot of current page where payload is executed will be sent to your XSShunter's site.
+
+Here's a POC using the vulnerable machine ChatSupportSystem used in Book: *The Hacker Playbook 3*
+
+![XSSHunter](/images/xss01_xsshunter.png)
 
