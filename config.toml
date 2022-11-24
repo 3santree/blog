@@ -1,4 +1,4 @@
-baseURL = "https://3santree.netilfy.app"
+baseURL = "3santree.netlify.app"
 languageCode = "en"
 defaultContentLanguage = "en"
 title = "3santree"                        # site title                     # 网站标题
