@@ -1,22 +1,71 @@
-baseURL = 'https://3santree.netlify.app/'
-languageCode = 'en-us'
-title = 'Manchester'
-description = 'Another corner in internet'
-theme = 'diary'
+baseURL = "https://3santree.netilfy.app"
+languageCode = "en"
+defaultContentLanguage = "en"
+title = "3santree"                        # site title                     # 网站标题
+hasCJKLanguage = true                  # has chinese/japanese/korean ?  # 自动检测是否包含 中文\日文\韩文
+summaryLength = 100
+paginate = 4                           # shows the number of articles   # 首页显示文章数量
+enableEmoji = true
+googleAnalytics = ""                   # your google analytics id       # Google统计代码
+disqusShortname = ""                   # your discuss shortname         # Disqus评论系统代码
 
+pygmentsUseClasses = true
+pygmentCodeFences = true
+pygmentscodefencesguesssyntax = true
+
+[author]                               # essential                      # 必需
+  name = "3santree"
+
+[blackfriday]
+  smartypants = false
+
+[[menu.main]]                          # config your menu               # 配置菜单
+  name = "Home"
+  weight = 10
+  identifier = "home"
+  url = "/"
 [[menu.main]]
-url = "/posts"
-name = "Archive"
-weight = 1
+  name = "Archive"
+  weight = 20
+  identifier = "archive"
+  url = "/posts/"
 [[menu.main]]
-url = "/categories"
-name = "Categories"
-weight = 2
+  name = "Tags"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
 [[menu.main]]
-url = "/tags"
-name = "Tags"
-weight = 3
-[[menu.main]]
-url = "/about"
-name = "About"
-weight = 4
+  name = "About"
+  weight = 40
+  identifier = "about"
+  url = "/about/"
+
+[params]
+  subTitle = "A security researcher"                                       # site's subTitle              # 网站二级标题
+  footerSlogan = "思 言 行"                                   # site's footer slogan         # 网站页脚标语
+  keywords = ["Hugo","theme","zozo"]                                   # site's keywords              # 网站关键字
+  description = "Hugo theme zozo example site."                        # site's description           # 网站描述
+  enableMathJax = true                                                 # enable mathjax               # 是否使用mathjax（数学公式）
+  enableSummary = true                                                 # display the article summary  # 是否显示文章摘要
+  mainSections = ["posts","post"]
+  
+# Valine.
+# You can get your appid and appkey from https://leancloud.cn
+# more info please open https://valine.js.org
+[params.valine]
+  enable = false
+  appId = ""
+  appKey = ""
+  placeholder = " "
+  visitor = true
+
+# Your socail's url
+# 社交地址配置
+[social]
+  github = "https://github.com/3santree"
+  linkedin = "https://www.linkedin.com/in/manchester-wang/"
+
+[markup]
+[markup.goldmark]
+[markup.goldmark.renderer]
+  unsafe = true
